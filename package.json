@@ -1,0 +1,25 @@
+{
+  "name": "react-ts-base",
+  "version": "0.1.0",
+  "description": "React TS base components and utilities",
+  "main": "build/index.js",
+  "types": "lib/index.d.ts",
+  "author": "Minitauros (Stephan Grasmeijer)",
+  "license": "MIT",
+  "dependencies": {
+    "floating-labels": "https://github.com/minitauros/js-floating-labels#v1.0.0",
+    "react": "^17",
+    "react-dom": "^17"
+  },
+  "devDependencies": {
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "typescript": "^4"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc"
+  },
+  "files": [
+    "build"
+  ]
+}
