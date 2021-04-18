@@ -5,7 +5,7 @@
  */
 
 import React, {ReactNode} from 'react';
-import {setUpFloatingLabels} from 'floating-labels/build';
+import {floatLabelClass, setUpFloatingLabels} from 'floating-labels/build';
 
 export interface selectOptions {
   [key: string]: string | number; // value => label
@@ -39,7 +39,7 @@ export const FormRowWithSelect: React.FC<props> = function (props: props) {
   }
 
   if (props.value) {
-    classNames.push('has-input-value');
+    classNames.push(floatLabelClass);
   }
 
   if (props.errMessage !== undefined && props.errMessage !== '') {

@@ -5,7 +5,7 @@
  */
 
 import React, {ReactNode} from 'react';
-import {setUpFloatingLabels} from 'floating-labels/build';
+import {setUpFloatingLabels, floatLabelClass} from 'floating-labels/build';
 
 interface props {
   children?: Readonly<{children?: ReactNode}>;
@@ -36,7 +36,7 @@ export const FormRowWithInput: React.FC<props> = function (props: props) {
   }
 
   if (props.value) {
-    classNames.push('has-input-value');
+    classNames.push(floatLabelClass);
   }
 
   if (props.errMessage !== undefined && props.errMessage !== '') {

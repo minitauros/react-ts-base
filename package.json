@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "body-scroll-lock": "^3",
-    "floating-labels": "https://github.com/minitauros/js-floating-labels#v1.0.1",
+    "floating-labels": "https://github.com/minitauros/js-floating-labels#v1.0.2",
     "react": "^17",
     "react-dom": "^17"
   },

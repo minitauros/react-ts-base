@@ -4,7 +4,7 @@
  * This is a component so that we can abstract things like animation of the label.
  */
 import React from 'react';
-import { setUpFloatingLabels } from 'floating-labels/build';
+import { floatLabelClass, setUpFloatingLabels } from 'floating-labels/build';
 var i = 0;
 export var FormRowWithTextarea = function (props) {
     setUpFloatingLabels();
@@ -13,7 +13,7 @@ export var FormRowWithTextarea = function (props) {
         classNames.push('required');
     }
     if (props.value) {
-        classNames.push('has-input-value');
+        classNames.push(floatLabelClass);
     }
     if (props.errMessage !== undefined && props.errMessage !== '') {
         classNames.push('has-error');

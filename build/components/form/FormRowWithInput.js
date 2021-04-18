@@ -4,7 +4,7 @@
  * This is a component so that we can abstract things like animation of the label.
  */
 import React from 'react';
-import { setUpFloatingLabels } from 'floating-labels/build';
+import { setUpFloatingLabels, floatLabelClass } from 'floating-labels/build';
 // Used to generate unique HTML IDs.
 var i = 0;
 export var FormRowWithInput = function (props) {
@@ -14,7 +14,7 @@ export var FormRowWithInput = function (props) {
         classNames.push('required');
     }
     if (props.value) {
-        classNames.push('has-input-value');
+        classNames.push(floatLabelClass);
     }
     if (props.errMessage !== undefined && props.errMessage !== '') {
         classNames.push('has-error');
