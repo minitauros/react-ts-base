@@ -19,6 +19,7 @@
     "jsx": "react",
     "downlevelIteration": true,
     "noFallthroughCasesInSwitch": true,
+    "rootDir": "src",
     "outDir": "build",
     "sourceMap": false,
     "declaration": true
