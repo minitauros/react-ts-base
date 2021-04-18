@@ -7,11 +7,13 @@
   "author": "Minitauros (Stephan Grasmeijer)",
   "license": "MIT",
   "dependencies": {
+    "body-scroll-lock": "^3",
     "floating-labels": "https://github.com/minitauros/js-floating-labels#v1.0.0",
     "react": "^17",
     "react-dom": "^17"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^2",
     "@types/react": "^17",
     "@types/react-dom": "^17",
     "typescript": "^4"
