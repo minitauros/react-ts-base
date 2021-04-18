@@ -3,7 +3,7 @@ import {callOnce} from './callOnce';
 /**
  * Sets up that on cmd+enter press the focused form gets submitted.
  */
-export function setUpFormSubmitOnEnter(): void {
+export function setUpFormSubmitOnCmdEnter(): void {
   if (typeof window === 'undefined') {
     return;
   }
