@@ -47,6 +47,10 @@ csstype@^3.0.2:
   version "1.0.0"
   resolved "https://github.com/minitauros/js-floating-labels#ea39c0f4fa3f6883986704b412a54bda84a849fb"
 
+"floating-labels@https://github.com/minitauros/js-floating-labels#v1.0.1":
+  version "1.0.0"
+  resolved "https://github.com/minitauros/js-floating-labels#27aa96eb10a0f46dc21083d85bfd86b942986ae5"
+
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
