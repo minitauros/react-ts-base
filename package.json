@@ -1,6 +1,6 @@
 {
   "name": "react-ts-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React TS base components and utilities",
   "main": "build/index.js",
   "types": "lib/index.d.ts",
