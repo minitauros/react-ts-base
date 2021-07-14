@@ -69,7 +69,7 @@ export const FormRowWithSelect: React.FC<props> = function (props: props) {
           <option>{/*Show empty option so that the label doesn't merge with the first option.*/}</option>
           {
             Object.keys(props.options).map((key) => {
-              return <option value={key}>{props.options[key]}</option>;
+              return <option key={key} value={key}>{props.options[key]}</option>;
             })
           }
         </select>

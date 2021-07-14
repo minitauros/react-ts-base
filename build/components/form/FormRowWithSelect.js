@@ -29,7 +29,7 @@ export var FormRowWithSelect = function (props) {
             React.createElement("select", { required: props.isRequired, autoFocus: props.autofocus, id: htmlId, name: props.name, value: props.value, onChange: onChange, style: props.style },
                 React.createElement("option", null),
                 Object.keys(props.options).map(function (key) {
-                    return React.createElement("option", { value: key }, props.options[key]);
+                    return React.createElement("option", { key: key, value: key }, props.options[key]);
                 }))),
         props.errMessage !== undefined && props.errMessage !== '' &&
             React.createElement("div", { className: 'error' }, props.errMessage),
