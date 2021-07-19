@@ -17,6 +17,7 @@ import React from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { ComponentWithEffects } from '../ComponentWithEffects';
 import { getPressedKey } from '../../lib/dom/getPressedKey';
+import { util } from '../../lib/dom/util';
 // We'll increment this number every time a modal is used so that each modal can get its own unique HTML ID.
 // This is necessary for the body scroll lock functionalities to work.
 var modalId = 0;
@@ -30,6 +31,7 @@ var Modal = /** @class */ (function (_super) {
         // This one will be centered and the rest of the body will be locked when the modal is opened.
         _this.modalElement = null;
         _this.closeOnEscPress = _this.closeOnEscPress.bind(_this);
+        _this.closeOnTouchOutside = _this.closeOnTouchOutside.bind(_this);
         return _this;
     }
     Modal.prototype.getEffects = function () {
@@ -46,6 +48,8 @@ var Modal = /** @class */ (function (_super) {
                     }
                     disableBodyScroll(_this.modalElement);
                     document.addEventListener('keyup', _this.closeOnEscPress, true);
+                    document.addEventListener('click', _this.closeOnTouchOutside, true);
+                    document.addEventListener('touchstart', _this.closeOnTouchOutside, true);
                 },
                 stop: function () {
                     if (!_this.modalElement) {
@@ -53,11 +57,22 @@ var Modal = /** @class */ (function (_super) {
                     }
                     enableBodyScroll(_this.modalElement);
                     document.removeEventListener('keyup', _this.closeOnEscPress, true);
+                    document.removeEventListener('click', _this.closeOnTouchOutside, true);
+                    document.removeEventListener('touchstart', _this.closeOnTouchOutside, true);
                 },
             }];
     };
     Modal.prototype.closeOnEscPress = function (e) {
         if (getPressedKey(e) === 'Escape') {
+            this.props.onCloseCallback();
+        }
+    };
+    Modal.prototype.closeOnTouchOutside = function (e) {
+        if (typeof window === 'undefined' || typeof document === 'undefined') {
+            return;
+        }
+        var modalElements = document.getElementsByClassName('modal');
+        if (!util.eventTargetsAnyElement(e, modalElements)) {
             this.props.onCloseCallback();
         }
     };

@@ -3,6 +3,7 @@ import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 import {ComponentWithEffects} from '../ComponentWithEffects';
 import {Effect} from '../../lib/react/Effect';
 import {getPressedKey} from '../../lib/dom/getPressedKey';
+import {util} from '../../lib/dom/util';
 
 interface props {
   children: Readonly<{children?: ReactNode}>,
@@ -25,6 +26,7 @@ export class Modal extends ComponentWithEffects<props, {}> {
     super(props);
 
     this.closeOnEscPress = this.closeOnEscPress.bind(this);
+    this.closeOnTouchOutside = this.closeOnTouchOutside.bind(this);
   }
 
   protected getEffects(): Array<Effect> {
@@ -41,6 +43,8 @@ export class Modal extends ComponentWithEffects<props, {}> {
         }
         disableBodyScroll(this.modalElement);
         document.addEventListener('keyup', this.closeOnEscPress, true);
+        document.addEventListener('click', this.closeOnTouchOutside, true);
+        document.addEventListener('touchstart', this.closeOnTouchOutside, true);
       },
       stop: () => {
         if (!this.modalElement) {
@@ -48,12 +52,25 @@ export class Modal extends ComponentWithEffects<props, {}> {
         }
         enableBodyScroll(this.modalElement);
         document.removeEventListener('keyup', this.closeOnEscPress, true);
+        document.removeEventListener('click', this.closeOnTouchOutside, true);
+        document.removeEventListener('touchstart', this.closeOnTouchOutside, true);
       },
     }];
   }
 
   closeOnEscPress(e: KeyboardEvent): void {
     if (getPressedKey(e) === 'Escape') {
+      this.props.onCloseCallback();
+    }
+  }
+
+  closeOnTouchOutside(e: Event): void {
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return;
+    }
+
+    const modalElements = document.getElementsByClassName('modal');
+    if (!util.eventTargetsAnyElement(e, modalElements)) {
       this.props.onCloseCallback();
     }
   }

@@ -43,7 +43,7 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.7.tgz#2a5fb75e1015e84dd15692f71e89a1450290950b"
   integrity sha512-KxnUB0ZMlnUWCsx2Z8MUsr6qV6ja1w9ArPErJaJaF8a5SOWoHLIszeCTKGRGRgtLgYrs1E8CHkNSP1VZTTPc9g==
 
-"floating-labels@https://github.com/minitauros/js-floating-labels#ec0a10d":
+"floating-labels@https://github.com/minitauros/js-floating-labels#v1.0.3":
   version "1.0.0"
   resolved "https://github.com/minitauros/js-floating-labels#ec0a10d99d6095a77b68bee42067000fbcf3ab35"
 

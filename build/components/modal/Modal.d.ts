@@ -13,6 +13,7 @@ export declare class Modal extends ComponentWithEffects<props, {}> {
     constructor(props: props);
     protected getEffects(): Array<Effect>;
     closeOnEscPress(e: KeyboardEvent): void;
+    closeOnTouchOutside(e: Event): void;
     protected generateHtmlId(): string;
     render(): JSX.Element;
 }
