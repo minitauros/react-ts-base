@@ -3,18 +3,18 @@ const called: Array<string> = [];
 /**
  * Ensures that the given callback is only called once for the given unique name.
  *
- * @param uniqueName
- * @param cb
+ * @return {boolean} - True if the callback was called.
  */
-export function callOnce(uniqueName: string, cb: () => void): void {
+export function callOnce(uniqueName: string, cb: () => void): boolean {
   if (called.includes(uniqueName)) {
-    return;
+    return false;
   } else if (bodyIndicatesCalled(uniqueName)) {
-    return;
+    return false;
   }
   called.push(uniqueName);
   storeCallOnBody(uniqueName);
   cb();
+  return true;
 }
 
 function bodyIndicatesCalled(uniqueName: string): boolean {
