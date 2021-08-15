@@ -11,7 +11,6 @@ interface props {
     isRequired?: boolean;
     hideAsterisks?: boolean;
     autofocus?: boolean;
-    type?: string;
     value: string;
     onChange: (newVal: string) => void;
     label: string;

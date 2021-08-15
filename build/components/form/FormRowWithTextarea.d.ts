@@ -8,7 +8,6 @@ interface props {
     isRequired?: boolean;
     hideAsterisks?: boolean;
     autofocus?: boolean;
-    type?: string;
     value: string;
     onChange: (newVal: string) => void;
     onFocus?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;

@@ -15,7 +15,6 @@ interface props {
   isRequired?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
   autofocus?: boolean;
-  type?: string;
   value: string;
   onChange: (newVal: string) => void;
   label: string;

@@ -1,24 +1,15 @@
-/**
- * Represents a form row with an <input> field.
- *
- * This is a component so that we can abstract things like animation of the label.
- */
-
 import React, {ReactNode} from 'react';
-import {setUpFloatingLabels, floatLabelClass} from 'floating-labels/build';
 
 interface props {
   children?: Readonly<{children?: ReactNode}>;
   isRequired?: boolean;
   isDisabled?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
-  autofocus?: boolean;
-  type?: string; // E.g. "text" (default) or "password".
+  type?: string; // E.g. "checkbox" (default) or "radio".
   value: string;
   label: string;
   name: string; // Seems necessary for autofill options to work.
   comment?: React.ReactNode;
-  icon?: React.ReactNode; // If given, will display this icon to the left of the input.
   errMessage?: string;
   onChange: (newVal: string) => void;
 }
@@ -27,24 +18,14 @@ interface props {
 let i: number = 0;
 
 export const FormRowWithInput: React.FC<props> = function (props: props) {
-  setUpFloatingLabels();
-
   const classNames = ['form-row'];
 
   if (props.isRequired && !props.hideAsterisks) {
     classNames.push('required');
   }
 
-  if (props.value) {
-    classNames.push(floatLabelClass);
-  }
-
   if (props.errMessage !== undefined && props.errMessage !== '') {
     classNames.push('has-error');
-  }
-
-  if (props.icon !== undefined) {
-    classNames.push('has-icon');
   }
 
   i++;
@@ -56,26 +37,18 @@ export const FormRowWithInput: React.FC<props> = function (props: props) {
 
   return (
     <div className={classNames.join(' ')}>
-      <label htmlFor={htmlId}>{props.label}</label>
       <div className="input-container">
-        {
-          props.icon !== undefined && (
-            <div className="icon-container">
-              {props.icon}
-            </div>
-          )
-        }
         <input
           required={props.isRequired}
-          autoFocus={props.autofocus}
           id={htmlId}
           name={props.name}
-          type={props.type || 'text'}
+          type={props.type || 'checkbox'}
           value={props.value}
           onChange={onChange}
           disabled={props.isDisabled || false}
         />
       </div>
+      <label htmlFor={htmlId}>{props.label}</label>
       {
         props.errMessage !== undefined && props.errMessage !== '' &&
         <div className={'error'}>{props.errMessage}</div>
