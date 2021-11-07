@@ -11,6 +11,7 @@ interface props {
     isRequired?: boolean;
     isDisabled?: boolean;
     hideAsterisks?: boolean;
+    selectAllOnFocus?: boolean;
     autofocus?: boolean;
     type?: string;
     value: string;
@@ -20,6 +21,7 @@ interface props {
     icon?: React.ReactNode;
     errMessage?: string;
     onChange: (newVal: string) => void;
+    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 export declare const FormRowWithInput: React.FC<props>;
 export {};

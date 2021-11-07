@@ -7,6 +7,7 @@ import React, { ReactNode } from 'react';
 interface props {
     isRequired?: boolean;
     hideAsterisks?: boolean;
+    selectAllOnFocus?: boolean;
     autofocus?: boolean;
     value: string;
     onChange: (newVal: string) => void;

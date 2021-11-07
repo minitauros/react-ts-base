@@ -10,6 +10,7 @@ import {floatLabelClass, setUpFloatingLabels} from 'floating-labels/build';
 interface props {
   isRequired?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
+  selectAllOnFocus?: boolean; // Select all contents on focus?
   autofocus?: boolean;
   value: string;
   onChange: (newVal: string) => void;
@@ -60,6 +61,10 @@ export const FormRowWithTextarea: React.FC<props> = function (props: props) {
   const onFocus = (e: React.FocusEvent<HTMLTextAreaElement>) => {
     if (props.onFocus !== undefined) {
       props.onFocus(e);
+    }
+
+    if (props.selectAllOnFocus) {
+      e.target.select();
     }
   };
 

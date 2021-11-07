@@ -30,6 +30,9 @@ export var FormRowWithTextarea = function (props) {
         if (props.onFocus !== undefined) {
             props.onFocus(e);
         }
+        if (props.selectAllOnFocus) {
+            e.target.select();
+        }
     };
     return (React.createElement("div", { className: classNames.join(' ') },
         props.label !== undefined && React.createElement("label", { htmlFor: htmlId }, props.label),

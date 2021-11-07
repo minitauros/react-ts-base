@@ -12,6 +12,7 @@ interface props {
   isRequired?: boolean;
   isDisabled?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
+  selectAllOnFocus?: boolean; // Select all contents on focus?
   autofocus?: boolean;
   type?: string; // E.g. "text" (default) or "password".
   value: string;
@@ -21,6 +22,7 @@ interface props {
   icon?: React.ReactNode; // If given, will display this icon to the left of the input.
   errMessage?: string;
   onChange: (newVal: string) => void;
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 // Used to generate unique HTML IDs.
@@ -54,6 +56,16 @@ export const FormRowWithInput: React.FC<props> = function (props: props) {
     props.onChange(e.target.value);
   };
 
+  const onFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (props.onFocus !== undefined) {
+      props.onFocus(e);
+    }
+
+    if (props.selectAllOnFocus) {
+      e.target.select();
+    }
+  };
+
   return (
     <div className={classNames.join(' ')}>
       <label htmlFor={htmlId}>{props.label}</label>
@@ -73,6 +85,7 @@ export const FormRowWithInput: React.FC<props> = function (props: props) {
           type={props.type || 'text'}
           value={props.value}
           onChange={onChange}
+          onFocus={onFocus}
           disabled={props.isDisabled || false}
         />
       </div>
