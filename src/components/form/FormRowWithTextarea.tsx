@@ -8,6 +8,7 @@ import React, {ReactNode} from 'react';
 import {floatLabelClass, setUpFloatingLabels} from 'floating-labels/build';
 
 interface props {
+  children?: Readonly<ReactNode>;
   isRequired?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
   selectAllOnFocus?: boolean; // Select all contents on focus?
@@ -22,7 +23,6 @@ interface props {
   placeholder?: string;
 
   name: string; // Seems necessary for autofill options to work.
-  children?: Readonly<{children?: ReactNode}>;
   style?: object;
   comment?: string;
   errMessage?: string;

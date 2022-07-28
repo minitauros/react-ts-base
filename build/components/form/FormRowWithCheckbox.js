@@ -10,7 +10,7 @@ export var FormRowWithInput = function (props) {
         classNames.push('has-error');
     }
     i++;
-    var htmlId = "form-input-" + i;
+    var htmlId = "form-input-".concat(i);
     var onChange = function (e) {
         props.onChange(e.target.value);
     };

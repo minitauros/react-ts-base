@@ -9,7 +9,7 @@ export enum gridItemAlignment {
 }
 
 interface props {
-  children: Readonly<{children?: ReactNode}>,
+  children?: Readonly<ReactNode>;
   contentPosition?: gridContentPosition;
   itemAlignment?: gridItemAlignment;
 }

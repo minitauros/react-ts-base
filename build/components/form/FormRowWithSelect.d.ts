@@ -8,6 +8,7 @@ export interface selectOptions {
     [key: string]: string | number;
 }
 interface props {
+    children?: Readonly<ReactNode>;
     isRequired?: boolean;
     hideAsterisks?: boolean;
     autofocus?: boolean;
@@ -16,9 +17,6 @@ interface props {
     label: string;
     name: string;
     options: selectOptions;
-    children?: Readonly<{
-        children?: ReactNode;
-    }>;
     style?: object;
     comment?: string;
     errMessage?: string;

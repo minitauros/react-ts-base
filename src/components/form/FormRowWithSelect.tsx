@@ -12,6 +12,7 @@ export interface selectOptions {
 }
 
 interface props {
+  children?: Readonly<ReactNode>;
   isRequired?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.
   autofocus?: boolean;
@@ -20,7 +21,6 @@ interface props {
   label: string;
   name: string; // Seems necessary for autofill options to work.
   options: selectOptions;
-  children?: Readonly<{children?: ReactNode}>;
   style?: object;
   comment?: string;
   errMessage?: string;

@@ -22,7 +22,7 @@ export var FormRowWithTextarea = function (props) {
         classNames.push('has-no-label');
     }
     i++;
-    var htmlId = "form-textarea-" + i;
+    var htmlId = "form-textarea-".concat(i);
     var onChange = function (e) {
         props.onChange(e.target.value);
     };

@@ -5,6 +5,7 @@
  */
 import React, { ReactNode } from 'react';
 interface props {
+    children?: Readonly<ReactNode>;
     isRequired?: boolean;
     hideAsterisks?: boolean;
     selectAllOnFocus?: boolean;
@@ -15,9 +16,6 @@ interface props {
     label?: string;
     placeholder?: string;
     name: string;
-    children?: Readonly<{
-        children?: ReactNode;
-    }>;
     style?: object;
     comment?: string;
     errMessage?: string;

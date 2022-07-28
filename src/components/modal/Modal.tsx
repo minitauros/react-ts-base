@@ -6,7 +6,7 @@ import {getPressedKey} from '../../lib/dom/getPressedKey';
 import {util} from '../../lib/dom/util';
 
 interface props {
-  children: Readonly<{children?: ReactNode}>,
+  children?: Readonly<ReactNode>;
   onCloseCallback: () => void;
 }
 

@@ -43,7 +43,7 @@ var Modal = /** @class */ (function (_super) {
                 start: function () {
                     _this.modalElement = document.getElementById(_this.htmlId);
                     if (!_this.modalElement) {
-                        console.warn("trying to set up effects for modal, but cannot find target element (with ID '" + _this.htmlId + "')");
+                        console.warn("trying to set up effects for modal, but cannot find target element (with ID '".concat(_this.htmlId, "')"));
                         return [];
                     }
                     disableBodyScroll(_this.modalElement);

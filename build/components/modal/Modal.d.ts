@@ -2,9 +2,7 @@ import { ReactNode } from 'react';
 import { ComponentWithEffects } from '../ComponentWithEffects';
 import { Effect } from '../../lib/react/Effect';
 interface props {
-    children: Readonly<{
-        children?: ReactNode;
-    }>;
+    children?: Readonly<ReactNode>;
     onCloseCallback: () => void;
 }
 export declare class Modal extends ComponentWithEffects<props, {}> {

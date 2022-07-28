@@ -8,7 +8,7 @@ import React, {ReactNode} from 'react';
 import {setUpFloatingLabels, floatLabelClass} from 'floating-labels/build';
 
 interface props {
-  children?: Readonly<{children?: ReactNode}>;
+  children?: Readonly<ReactNode>;
   isRequired?: boolean;
   isDisabled?: boolean;
   hideAsterisks?: boolean; // If true, hides the * from required input labels.

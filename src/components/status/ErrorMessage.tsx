@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react';
 
 interface props {
-  children?: Readonly<{ children?: ReactNode }>;
+  children?: Readonly<ReactNode>;
 }
 
 export const ErrorMessage: React.FC<props> = function (props: props) {

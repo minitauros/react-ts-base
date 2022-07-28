@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
 interface props {
-    children: Readonly<{
-        children?: ReactNode;
-    }>;
+    children?: Readonly<ReactNode>;
     classNames?: Array<string>;
     centerText?: boolean;
     xs?: number;

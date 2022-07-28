@@ -9,13 +9,13 @@
   "dependencies": {
     "body-scroll-lock": "^3",
     "floating-labels": "https://github.com/minitauros/js-floating-labels#main",
-    "react": "^17",
-    "react-dom": "^17"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/body-scroll-lock": "^2",
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
+    "@types/body-scroll-lock": "^3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "typescript": "^4"
   },
   "scripts": {

@@ -41,19 +41,19 @@ export var GridCell = function (props) {
     };
     var classNames = [];
     if (props.xs !== undefined) {
-        classNames.push("col-xs-" + colSpan(props.xs));
+        classNames.push("col-xs-".concat(colSpan(props.xs)));
     }
     if (props.s !== undefined) {
-        classNames.push("col-s-" + colSpan(props.s));
+        classNames.push("col-s-".concat(colSpan(props.s)));
     }
     if (props.m !== undefined) {
-        classNames.push("col-m-" + colSpan(props.m));
+        classNames.push("col-m-".concat(colSpan(props.m)));
     }
     if (props.l !== undefined) {
-        classNames.push("col-l-" + colSpan(props.l));
+        classNames.push("col-l-".concat(colSpan(props.l)));
     }
     if (props.xl !== undefined) {
-        classNames.push("col-xl-" + colSpan(props.xl));
+        classNames.push("col-xl-".concat(colSpan(props.xl)));
     }
     if (props.hide) {
         props.hide.forEach(function (hideOption) {

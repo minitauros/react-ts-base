@@ -2,8 +2,8 @@ import React, {ReactNode} from 'react';
 
 
 interface props {
-  children: Readonly<{ children?: ReactNode }>,
-  classNames?: Array<string>,
+  children?: Readonly<ReactNode>;
+  classNames?: Array<string>;
   centerText?: boolean;
 
   // Column sizes, e.g. "s=12" would mean "spans 12/12 columns on small screens".
